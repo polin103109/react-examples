@@ -1,21 +1,53 @@
+import { useState } from "react"
 import "./Calculator.css"
- function Operation ({label}){
-return <button>{label}</button>
+const OPERATIONS =['+','-','*','/']
+
+function Operation ({label,handleOnclick}){
+   return <button onClick={handleOnclick}>{label}</button>
     }
+
 function Calculator (){
-   const operations =['+','-','*','/']
-    return (
+    const[result,setResult] = useState();
+    const[numbers,setNumbers] = useState([0,0]);
+  
+    function handleOnChange(value,index){
+        const newNumbers=[...numbers];
+        newNumbers[index] = parseInt(value);
+        setNumbers(newNumbers);
+        }
+    function handleOperations(operationType){
+      switch(operationType){
+        case '+':
+            setResult(numbers[0]+numbers[1]);
+            break;
+            case '-':
+                setResult(numbers[0]-numbers[1]);
+                break;
+                case '*':
+                    setResult(numbers[0]*numbers[1]);
+                    break;
+                    case '/':
+                        setResult(numbers[0]/numbers[1]);
+                        break;
+            default:
+                break;
+      }
+      
+    }
+ return (
      <div className="calculator">
         <h1>Calculator</h1>
         <div className="input">
-            <input type='number'></input>
-            <input type= 'number'></input>
-        </div>
+        {[0,1].map((id) => (
+            <input key={id} type="number"  onChange={(e) => handleOnChange(e.target.value,id)}/>))}
+            </div>
         <div className="operations">
-          {operations.map((operation,index) => (<Operation key={index} label={operation}/>))}
+         {OPERATIONS.map((operation,index) => (
+            <Operation key={index} label={operation} handleOnclick={()=>handleOperations(operation) }/>))
+         }
         </div>
         <div>
-          <h3> result:</h3> 
+          <h3> result:{result}</h3> 
         </div>
      </div>
     )
