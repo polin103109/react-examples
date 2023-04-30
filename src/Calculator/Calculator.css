@@ -1,0 +1,17 @@
+
+.input{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+  
+}  
+.calculator{
+    gap:8px;
+    display: flex;
+    max-width: 500px;
+    flex-direction: column;
+}
+.operations{
+    display: flex;
+    justify-content: space-around;
+}
