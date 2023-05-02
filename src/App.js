@@ -1,13 +1,11 @@
 import "./App.css";
 function StudentIntro(props) {
-  // const name = "Sabrina Sharmin";
-  // const institute = "RUET";
-  // const department = "ECE";
+  const { name, institute, department } = props;
   return (
     <div>
-      <h1>{`Name:${props.name}`}</h1>
-      <h2>{`Institute:${props.institute}`}</h2>
-      <h3>{`Department:${props.department}`}</h3>
+      <h1>{`Name:${name}`}</h1>
+      <h2>{`Institute:${institute}`}</h2>
+      <h3>{`Department:${department}`}</h3>
     </div>
   );
 }
