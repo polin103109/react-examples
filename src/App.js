@@ -15,15 +15,11 @@ function App() {
     institute: "Ruet",
     department: "ECE",
   };
-  const student2 = {
-    name: "Sharmin",
-    institute: "JU",
-    department: "CSE",
-  };
+
   return (
     <div className="App">
       <StudentIntro {...student1} />
-      <StudentIntro {...student2} />
+      <StudentIntro name={"Sharmin"} institute={"DU"} department={"CSE"} />
     </div>
   );
 }
