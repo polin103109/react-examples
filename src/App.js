@@ -1,6 +1,5 @@
 import "./App.css";
-function StudentIntro(props) {
-  const { name, institute, department } = props;
+function StudentIntro({ name, institute, department }) {
   return (
     <div>
       <h1>{`Name:${name}`}</h1>
