@@ -1,7 +1,8 @@
+import Login from "./Login/login";
 import "./App.css";
 
 function App() {
-  return <div className="App">react</div>;
+  return <Login />;
 }
 
 export default App;
