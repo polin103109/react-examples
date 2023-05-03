@@ -7,12 +7,10 @@ function Login (){
         password:'',
     })
     const handleOnChange =(event) =>{
-          if(event.target.name==='email'){
-            setCredential({...credential,email:event.target.value})
-          }
-         else if(event.target.name==='password'){
-            setCredential({...credential,password:event.target.value})
-          }
+         const update = {
+            [event.target.name] : event.target.value,
+         };
+         setCredential({...credential,...update})
     }
     
     return <div className="login">
