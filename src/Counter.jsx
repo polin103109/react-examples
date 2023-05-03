@@ -11,12 +11,11 @@ class Counter extends React.Component{
     }
     increment(){
     //   const previousCount=this.state.count;
-        this.setState(function(prevstate){
-            return{
+        this.setState((prevstate)=>({
                 ...prevstate,
                 count : prevstate.count+1
-        }
-        })
+        
+        }))
         console.log("updating state",this.state)
 
     }
