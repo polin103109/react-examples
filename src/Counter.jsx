@@ -9,11 +9,11 @@ class Counter extends React.Component{
       console.log('inside constructor');
       this.increment=this.increment.bind(this);
     }
-    increment(){
+    increment(incrementBy){
     //   const previousCount=this.state.count;
         this.setState((prevstate)=>({
                 ...prevstate,
-                count : prevstate.count+1
+                count : prevstate.count+incrementBy
         
         }))
         console.log("updating state",this.state)
@@ -28,9 +28,9 @@ render(){
     <div>
        <h1>{componentName}</h1> 
         <div>
-            <button onClick={this.increment}>+</button>
+            <button onClick={() => this.increment(1)}>+</button>
             <p>{count}</p>
-            <button>-</button>
+            <button onClick={() => this.increment(-1)}>-</button>
         </div>
     </div>
 
