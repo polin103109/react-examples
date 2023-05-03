@@ -5,12 +5,23 @@ class Counter extends React.Component{
       this.state={
         dummystate:'dummy',
         count:0,
+        user:{},
       };
       console.log('inside constructor');
       this.increment=this.increment.bind(this);
     }
     componentDidMount(){
         console.log("rendering componentdidmount.......")
+        fetch('https://jsonplaceholder.typicode.com/todos/1')
+      .then((response )=> response.json())
+      .then((data) => {
+        if(!data){
+            return;
+        }
+        this.setState({
+            user:data,
+        });
+      });
     }
     componentDidUpdate(){
         console.log("rendering  componentDidUpdate.......")
@@ -31,6 +42,10 @@ class Counter extends React.Component{
     // this.setState({
     //     count: this.state.count+incrementBy,
     //  });
+    if(this.state.count + incrementBy>10){
+        alert("cant be proceed");
+        return;
+    }
  
         this.setState((prevstate)=>({
                 ...prevstate,
@@ -43,7 +58,7 @@ class Counter extends React.Component{
 render(){
    
     console.log('renderingggg');
-    const{count}=this.state;
+    const{count,user}=this.state;
     const {componentName} = this.props;
     return (
     <div>
@@ -52,6 +67,7 @@ render(){
             <button onClick={() => this.increment(1)}>+</button>
             <p>{count}</p>
             <button onClick={() => this.increment(-1)}>-</button>
+            <p>{`Title is ${user.title}`}</p>
         </div>
     </div>
 
