@@ -19,13 +19,14 @@ class Counter extends React.Component{
 render(){
    
     console.log('renderingggg');
+    const{count}=this.state;
     const {componentName} = this.props;
     return (
     <div>
        <h1>{componentName}</h1> 
         <div>
             <button onClick={this.increment}>+</button>
-            <p>{this.state.count}</p>
+            <p>{count}</p>
             <button>-</button>
         </div>
     </div>
