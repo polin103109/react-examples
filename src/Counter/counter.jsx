@@ -3,22 +3,24 @@ import { useEffect, useState } from "react";
 function Counter(){
     const[count,setCount] = useState(0);
     const [clicked,setClicked] = useState(0);
-    useEffect(()=>{
+useEffect(()=>{
 console.log("executing use effect 1");
 document.title=`Current count:${count}`;
+setClicked((clicked)=> clicked-2);
     },[count]
     );
-    useEffect(()=>{
+
+useEffect(()=>{
 console.log("executing use effect 2");
-     if(clicked>=10 && count>=10){
+     if(clicked>=10){
         alert(`you have clicked ${clicked}times`)
      }
-    },[clicked,count]
+    },[clicked]
     );
     function onIncrement(){
       
     setCount(count+1);
-    setClicked((clicked)=> clicked+1);
+    // setClicked((clicked)=> clicked+1);
     }
     
      console.log("rendering...............");
