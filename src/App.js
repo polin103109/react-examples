@@ -5,8 +5,8 @@ import Entries from "./Entries/Entry";
 function App() {
   return (
     <div className="App">
-      {/* <Counter /> */}
-      <Entries />
+      <Counter />
+      {/* <Entries /> */}
     </div>
   );
 }
