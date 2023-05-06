@@ -17,7 +17,8 @@ export default function Entries(){
     },[])
     return <div className="entries">
         <ul>{entries.map((entry,index)=>(
-            <li key={index}>{entry.Category}</li>
+            <li key={index}>
+                <a href={entry.Link}>{entry.Category}</a></li>
         ))}</ul>
     </div>
 }
