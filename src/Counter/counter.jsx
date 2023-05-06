@@ -4,7 +4,8 @@ function Counter(){
     const[count,setCount] = useState(0);
     useEffect(()=>{
 console.log("executing use effect");
-    },
+document.title=`Current count:${count}`;
+    },[count]
     );
     function onIncrement(){
       
