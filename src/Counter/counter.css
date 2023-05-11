@@ -1,0 +1,12 @@
+.counter-wrap{
+    background-color:mediumaquamarine;
+    width:300px;
+    margin: 50px;
+    height: 200px;
+}
+.button{
+    gap:10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
