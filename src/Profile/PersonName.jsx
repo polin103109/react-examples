@@ -1,12 +1,17 @@
-const UserPortfolio = ({url,firstname,lastname}) => {
+import { useContext } from "react"
+import UseContext from "../context/UserContext"
+
+const UserPortfoliolink = () => {
+   const {firstname,lastname,url}= useContext(UseContext);
    return <a href={url}>{`Name: ${firstname} ${lastname}`}</a>
 }
 
-export const PersonName = ({firstname,lastname,url}) =>{
+export const PersonName = () =>{
+    const {firstname,lastname}=useContext(UseContext);
     return (
         <div>
              <h1>{`Name: ${firstname} ${lastname}`}</h1>
-             <UserPortfolio firstname={firstname} lastname={lastname} url={url}/>
+             <UserPortfoliolink firstname={firstname} lastname={lastname} />
         </div>
     )
 }

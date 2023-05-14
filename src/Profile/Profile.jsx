@@ -1,12 +1,22 @@
+import { useContext } from "react";
 import { PersonName } from "./PersonName";
+import UseContext from "../context/UserContext";
 
-const PersonAge = ({age}) =>  <h2>Age: {age}</h2>;
+const PersonAge =()=> {
+    const{age}=useContext(UseContext);
+
+return (
+    <div>
+<h2>Age: {age}</h2>
+</div>
+);
+}  
 
 
 
-export default function Profile ({user}){
+export default function Profile (){
     return <div>
-       <PersonName firstname={user.firstname} lastname={user.lastname} url={user.url}/>
-       <PersonAge age={user.age}/>
+       <PersonName />
+       <PersonAge />
     </div>
 }
