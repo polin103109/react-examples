@@ -1,13 +1,13 @@
 import React from "react";
 const UseContext = React.createContext({
-  id: "",
-  firstname: "-------------",
-  lastname: "-------",
-  age: 0,
+  id: "1234",
+  firstname: "Sabrina",
+  lastname: "Sharmin",
+  age: 23,
   address: {
-    country: "",
-    city: "",
+    country: "USA",
+    city: "NY",
   },
-  url: "",
+  url: "https://github.com/polin103109",
 });
 export default UseContext;

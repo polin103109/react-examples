@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Profile from "./Profile/Profile";
-import UseContext from "./context/UserContext";
 import "./App.css";
-
+import UseContext from "./context/UserContext";
+const Url = ({ url }) => <a href={url}>{url}</a>;
 function App() {
   const [user, setUser] = useState();
   useEffect(() => {
@@ -29,6 +29,9 @@ function App() {
       <UseContext.Provider value={user}>
         <Profile />
       </UseContext.Provider>
+      <UseContext.Consumer>
+        {({ url }) => <Url url={url} />}
+      </UseContext.Consumer>
     </div>
   );
 }
