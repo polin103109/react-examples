@@ -28,10 +28,10 @@ function App() {
     <div className="App">
       <UseContext.Provider value={user}>
         <Profile />
+        <UseContext.Consumer>
+          {({ url }) => <Url url={url} />}
+        </UseContext.Consumer>
       </UseContext.Provider>
-      <UseContext.Consumer>
-        {({ url }) => <Url url={url} />}
-      </UseContext.Consumer>
     </div>
   );
 }
